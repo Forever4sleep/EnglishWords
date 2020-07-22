@@ -4,7 +4,7 @@ import sys
 sys.path.append("..")
 
 from PIL import Image, ImageFont, ImageDraw
-from ..words_module.wrds_module import Word
+from ..words_module.wrds_module import WordsCouple
 
 
 class ImageOfWordHandler:
@@ -13,7 +13,7 @@ class ImageOfWordHandler:
     template_image_path = os.path.dirname(os.path.abspath("../flag")) + "/flag"
     font_path = os.path.dirname(os.path.abspath("../flag")) + "/fonts/ARIALBD.TTF"
 
-    def __init__(self, word: Word):
+    def __init__(self, word: WordsCouple):
         self.word = word
         self.file_name = word.source + "_image"
         self.image = Image.open(ImageOfWordHandler.template_image_path)
