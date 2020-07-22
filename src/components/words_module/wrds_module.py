@@ -10,11 +10,13 @@ class WordsCouple:
 class WordParser:
     """Represents a class that contains functions for getting english words and its translated ones"""
 
-    def __init__(self, site):
+    def __init__(self, site, tag):
         self.site = site
+        self.tag = tag
 
         from bs4 import BeautifulSoup
         self.__content = BeautifulSoup(self.__get_site_content__(), "html.parser")
+        
 
     def __get_site_content__(self) -> str:
         """Just gets the site's html"""
@@ -28,7 +30,7 @@ class WordParser:
         counter = 0
         file = open("words.txt", "w+")
 
-        for tr in self.__content.find_all("tr"):
+        for tr in self.__content.find_all(self.tag):
             source_word, translated_word = "", ""
 
             for child in tr.children:
