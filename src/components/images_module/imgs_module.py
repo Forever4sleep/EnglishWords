@@ -1,11 +1,13 @@
 import os
 import sys
 
+sys.path.append("...")
 sys.path.append("..")
+
 
 from PIL import Image, ImageFont, ImageDraw
 from ..words_module.wrds_module import WordsCouple
-from ...constants import ROOT_FOLDER
+from constants import ROOT_FOLDER
 
 
 class ImageOfWord:

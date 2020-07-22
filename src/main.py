@@ -4,7 +4,7 @@ from constants import ROOT_FOLDER
 import os
 
 
-file_path = ROOT_FOLDER + "/components/words_moudle/words.txt"
+file_path = ROOT_FOLDER + "/src/components/words_module/words.txt"
 content_file = open(file_path, "r")
 
 counter = 0
@@ -34,7 +34,7 @@ for line in content_file.readlines():
 # We've got these variables for limits in the further loop 
 # since there will be a lot of images (over 900) in the folder
 start_from = 0 
-end_on = 45
+end_on = 1
 
 for word in words[start_from:end_on]:
     handler = ImageOfWord(word)
